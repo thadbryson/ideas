@@ -1,0 +1,23 @@
+{
+    "name":         "thadbryson/ideas",
+    "description":  "Ideas in my head that need to get out.",
+    "keywords":     ["ideas", "brainstorm", "php", "javascript", "css"],
+    "license":      "MIT",
+    "type":         "library",
+    "time":         "2016-01-13",
+    "_homepage":     "http://* - Full homepage URL here.",
+    "authors": [
+        {
+            "name":     "Thad Bryson - Make yourself an author!",
+            "email":    "thadbry@gmail.com",
+            "homepage": "http://thadbryson.co",
+            "role":     "Author"
+        }
+    ],
+
+    "minimum-stability": "stable",
+
+    "require": {
+
+    }
+}
