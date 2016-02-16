@@ -6,4 +6,4 @@ can view them in this repository.
 Feel free to implement them yourself if you'd like. They don't have to open sourced. You can make money from them 
 if you'd like. 
 
-You can find them in the [docs/](https://github.com/thadbryson/ideas/docs) folder of this project. 
+You can find them in the **docs/** folder of this project. 
