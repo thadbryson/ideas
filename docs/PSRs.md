@@ -47,3 +47,7 @@ Frameworks are tools that help you build things. I have some ideas for patterns 
 
 ## Data Manager
  - see "Open Source.md"
+
+## Trait Boot Methods
+ - Methods that get loaded when object constructor is called.
+ - Name begins with "boot".
