@@ -1,20 +1,20 @@
 # Security Library
 
-Target form
+**Target form**
     - entire form
     - only certain fields
 
-CSRF protection
+**CSRF protection**
 
-Flood protection
+**Flood protection**
     - only so many submissions on same IP
     - only submit X per Y amount of time
     - wait until you can submit again if too many
     - only submit X amount
 
-CAPTCHA protection
+**CAPTCHA protection**
 
-Filter content
+**Filter content**
     - potential spam
     - remove HTML
     - fix bad HTML
@@ -26,14 +26,14 @@ Filter content
     - custom callbacks
     - specific languages (spoken)
 
-File handling
+**File handling**
     - size restrictions
     - extension restrictions
     - remove extension from file name and save that (return extension when downloading)
     - scan for viruses
     - block certain encoding
 
-Whitelist or Blacklist Things
+**Whitelist or Blacklist Things**
      - IPs
           - certain areas (countries, states, cities, lat/lon radius)
           - list
