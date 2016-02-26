@@ -181,10 +181,10 @@ used when deciding on a framework, building your own framework, or building a ne
 * Management with tools like npm or Bower?
 
 ## Developer Tools
-* (tool) Version control system?
-* (tool) Project management?
-* (tool) IDE (integrated development environment)
-* (tool) Log monitoring (error, access)
+* Version control system?
+* Project management?
+* IDE (integrated development environment)
+* Log monitoring (error, access)
 * Code enforcement? Make sure everyone follows code styling rules and best practices.
  - Examples: Code Climate, PHP_CodeSniffer
  - Can it change code automatically? Should it?
