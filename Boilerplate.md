@@ -1,9 +1,9 @@
 # App Patterns
 
-I'm constantly repeating myself in software. Which defeats a main purpose of software. There are a lot of things 
-that are used over and over again. 
+I'm constantly repeating myself in software. Which defeats a main purpose of software. There are a lot of things
+that are used over and over again.
 
-I want a nice checklist to use for when you're starting a new project of choices that need to be made. This can be 
+I want a nice checklist to use for when you're starting a new project of choices that need to be made. This can be
 used when deciding on a framework, building your own framework, or building a new app.
 
 ## Things to think about
@@ -17,7 +17,7 @@ used when deciding on a framework, building your own framework, or building a ne
  - Ages? Is this for elderly people? The young?
  - Screen resolutions?
  - Browsers? What version of IE do you need to support? IE11+ maybe? Or do you need to support IE7?
- - Where do these people live? 
+ - Where do these people live?
   - What languages do you need to support? I mean like English, Spanish, Swahili?
   - Are you going to need language switching?
   - Currency conversion?
@@ -43,7 +43,7 @@ used when deciding on a framework, building your own framework, or building a ne
  - Tokens for User authentication?
 
 ## Code - server
-* Architecure? 
+* Architecure?
  - MVC (model-view-controller) or something else?
  - Flat files all over the place?
 * Model system?
@@ -51,10 +51,10 @@ used when deciding on a framework, building your own framework, or building a ne
  - How do you insert and update models?
  - How do your models interact with forms on your system?
  - Use an ORM? Doctrine, Eloquent, Propel, or none?
- - Database abstraction layer? 
+ - Database abstraction layer?
   - Does it adequately prevent SQL injection attacks?
   - Can it handle database types you need? MySQL, Oracle, Postgres, etc?
- - CRUD actions? 
+ - CRUD actions?
   - save()? Insert or update.
   - delete()? Delete the model?
   - How do you handle retrieving the data?
@@ -84,7 +84,7 @@ used when deciding on a framework, building your own framework, or building a ne
  - What will be configurable?
 * Events and queues
  - What things can be ran outside your controller actions?
- - Should some events be triggered after an action? Example: When a customer orders a t-shirt on your site should 
+ - Should some events be triggered after an action? Example: When a customer orders a t-shirt on your site should
  the confirmation email be sent later? Like 1 minute later? If there's a failure with the e-mail system your orders
  won't be interrupted.
 * CLI Command line interface
@@ -95,7 +95,7 @@ used when deciding on a framework, building your own framework, or building a ne
   - Headers?
   - What should be sortable?
   - Can we edit data inline?
- - What filters should we use? 
+ - What filters should we use?
  - Exports to CSV, Excel, or PDF?
  - Save the reports?
  - E-mail the reports?
@@ -108,18 +108,18 @@ used when deciding on a framework, building your own framework, or building a ne
  - Can the User view the same thing when they come back to this page?
 * Dependency Injection
  - Configuration for this?
- - How do you prevent circular references? Make sure when creating objects one object doesn't use another object that 
+ - How do you prevent circular references? Make sure when creating objects one object doesn't use another object that
  uses itself. Creates a fatal error. You get an infinite loop with them creating each other.
  - Access this? One global variable, global function, or embedded into your system?
 * Forms
  - Interact with form data?
  - Pull from POST and GET? Other methods like DELETE and PATCH?
- - CSRF protection? 
+ - CSRF protection?
  - Build forms on the frontend?
 * Requests? HTTP Requests.
  - CSRF protection?
  - Get POST and GET data.
- - Sanitize data for security problems? 
+ - Sanitize data for security problems?
   - Remove HTML to prevent XSS attacks?
   - Limit number of email addresses entered to stop spammers.
   - Scan data for spam.
@@ -165,14 +165,14 @@ used when deciding on a framework, building your own framework, or building a ne
  - Camel casing or underscore for variables and method and function names?
  - Capital or lowercase letters for variable, method, and class names?
  - Naming semantics?
-               
+
 ## Frontend Asset Management
 * How do you plan to manage images, CSS, Javascripts, files and so on?
 * Files
  - Uploads? Will people be uploading to your server?
- - How do you handle file name conflicts. 
+ - How do you handle file name conflicts.
  - Where do you store the files? On the server locally or remotely using something like Dropbox or Amazon Web Services?
-  - If you store them locally you can't share them between your development, staging, and production 
+  - If you store them locally you can't share them between your development, staging, and production
   environments easily.
  - Limit file size?
  - LImit file types and extensions?
@@ -194,7 +194,7 @@ used when deciding on a framework, building your own framework, or building a ne
 ## Monitoring
 * (code) Logging system
 * Monitor server(s)
- - How many servers do we need to monitor? 
+ - How many servers do we need to monitor?
 
 ## Deployments
 * How do you deploy your code to staging and production?
@@ -204,10 +204,11 @@ used when deciding on a framework, building your own framework, or building a ne
  - Use Docker Hub, or some of the Docker Toolbox?
 * Puppet, Chef, or Ansible?
 * Use configuraiton management like PuphPet?
+* Terraform? https://www.terraform.io/
 
 ## Environment
 * Where do you store the database?
- - Its own server or spread across many? 
+ - Its own server or spread across many?
  - Replication?
  - Remotely or locally?
 * Caching system
@@ -233,4 +234,4 @@ used when deciding on a framework, building your own framework, or building a ne
 * Unit testing? PHP Unit?
 * Functional testing? Are you going to test the frontend automatically?
 * Do all tests have to pass before committing to master?
-* Are you going to automatically test for HTTP errors on your site? 404s, 403s or 500 errors? 
+* Are you going to automatically test for HTTP errors on your site? 404s, 403s or 500 errors?

@@ -18,8 +18,9 @@ Shake the phone and it gives you random places to go or things to do!
 
 **Profit possibilities**
  - Coupons
- - Uber rides - commission
+ - Uber rides' commission
  - Commission on meals, bar tabs
+ - Postmates orders
 
 ## Amazon Echo Custom Commands
  - Add custom commands to the Echo.

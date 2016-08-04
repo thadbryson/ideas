@@ -133,31 +133,7 @@
  - Version control system
  - Ability to add any file path or directory to your project
  - Even paths outside the project path
-
-## Anything Router
- - Match any type of input to a pattern route. Then Execute code from it.
- - Route
-  - string $pattern: String for the pattern to match.
-  - GET /user/1 => GET /user/{id}
-  - POST /user/1/auth => POST /user/{id}/auth
-  - GET /user/*/something => GET /user/1/something, GET /user/2/something, GET /user/1/2/3/a/abc/~/something
-  - array $aliases[]: to the $pattern
-  - array $callbacks[]: array of Closures or strings (saved closures) to call.
-  - array $params[]: parameters for the pattern.
-  - Array of values (param name)
-  - Key (name) => values (validation for the parameter)
-  - ->route(string $pattern, array|Closure|null|false $callbacks); // Add route
-  - $callbacks is array: Callbacks to run on run().
-  - Closure: Run just this Closure on run()
-  - null: Do nothing. Just return true/false for pattern being found.
-  - false: remove route
-  - ->alias(string $pattern, string $alias); // Add alias to pattern
-  - ->run(string $find, array $params = []); // Find route and execute all callbacks. Return result.
-  - ->save(string $find, array $params = []); // Delay run of find until ->flush() called.
-  - ->flush(); // Run and return all saved finds
-  - ->getRoute(string $pattern); // Find route and return Route object.
-  - ->getRouteByFind(string $find); // "" with Find string
-  - ->getRouteByAlias(string $alias); // "" with alias string
+ - Allow only certain people to modify files.
 
 ## Error Reporting
  - Log errors with Monolog
@@ -184,3 +160,73 @@ Content generator (files and directories) from templates. Creates **file content
    - Return true/false for validation
   - getErrors()
    - Return array of errors for object.
+
+## Global Framework Helper
+ - Should I do this?
+ - Call "TCB"? Example: TCB::cache('me'); That will get the cache with key 'me'.
+ - Global helper to get basic Framework functionality.
+  - input() - (Request, CLI arguments, etc)
+  - output() (HTML, CSS, JS, files, images, JSON, text, etc)
+  - dbal(string $sql) (call a database)
+  - cache() - cache data between all users
+  - session() - cache data for just this User
+  - chain(mixed $var) - create Chain object with var quickly.
+  - str(string $str) - create Stringy object
+  - arr(array $arr) - Get Arr Collection object.
+  - response(mixed $data) - Create response
+
+## Execute Engine
+ - Route to execute callbacks.
+ - Useful for using 3rd party libraries and services.
+ - Example:
+
+```php
+
+use Guzzle\Http\Client;
+
+$client = new Client('http://www.example.com/api/v1/key/{key}', [
+    'key' => '*** My Key Here ***'
+]);
+
+$request  = $client->get('users');
+$response = $request->send();
+
+return $response;
+
+```
+
+Now with Execute Engine:
+
+```php
+
+// Add this service in the Engine.
+use Guzzle\Http\Client;
+
+$engine->add('guzzle.api1.get', function (string $key, string $path) {
+
+    $client = new Client('http://www.example.com/api/v1/key/{key}', [
+        'key' => $key
+    ]);
+
+    $request  = $client->get($path);
+    $response = $request->send();
+
+    return $response;
+});
+
+// Now just call this:
+$response = $engine->run('guzzle.api1.get', [
+    'key'  => $key,
+    'path' => 'users',
+]);
+
+```
+
+So now Guzzle could require the Engine (they don't right now) and configure an Engine to be used... all the end users
+would have to do is see what the services are in the Engine.
+
+- No documentation to read.
+- No code to write.
+- Just use the ```php$engine```.
+
+
